@@ -27,9 +27,15 @@ describe('H1 Text', () => {
 	await page.goto('http://localhost:3000/');
 	await page.waitForSelector('.App-link');
 
-	const html = await page.$eval('.App-link', e => e.innerHTML);
-	expect(html).toBe("Learn React");
-
-	browser.close();
+  const html = await page.$eval('.App-link', e => e.innerHTML);
+  try {
+	  expect(html).toBe("Learn React");
+  } catch (e) {
+    console.log(e);
+    browser.close();
+    process.exit(123);
+  } finally {
+    browser.close();
+  }
   }, 16000);
 });
