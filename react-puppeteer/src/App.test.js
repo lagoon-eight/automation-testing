@@ -28,7 +28,7 @@ describe('H1 Text', () => {
 	await page.waitForSelector('.App-link');
 
 	const html = await page.$eval('.App-link', e => e.innerHTML);
-	expect(html).toBe("Learn React");
+	expect(html).toBe("Learn React111");
 
 	browser.close();
   }, 16000);
