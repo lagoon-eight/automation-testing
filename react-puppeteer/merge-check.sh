@@ -23,7 +23,7 @@ npm install
 echo $DONE
 
 echo "Merging master into this branch"
-git pull origin master
+git pull origin master --no-edit
 echo $DONE
 
 
